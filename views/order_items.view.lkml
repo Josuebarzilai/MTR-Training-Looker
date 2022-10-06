@@ -48,8 +48,6 @@ view: order_items {
 
   dimension: sale_price {
     type: number
-    value_format: "$0.00"
-    hidden: yes
     sql: ${TABLE}.sale_price ;;
   }
 
@@ -72,9 +70,5 @@ view: order_items {
     drill_fields: [id, orders.id, inventory_items.id]
   }
 
-  measure: total_revenue {
-    type: sum
-    value_format: "$0.00"
-    sql: ${sale_price} ;;
-  }
+
 }
